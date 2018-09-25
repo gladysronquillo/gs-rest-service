@@ -18,3 +18,11 @@ ADD ${JAR_FILE} gs-rest-service.jar
 
 # Run the jar file 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/gs-rest-service.jar"]
+
+# Proceso ha realizar:
+# dirigirse al path /initial
+# crear el archivo .jar ejecutando el sigueinte comando en el cmd (usando maven): mvnw package && java -jar target/gs-rest-service.jar
+# creación de la imagen, ejecutar: docker build -t spring .
+# creación del contenedor, ejecutar: docker run -p 5000:8080 --name=gs-rest-service -d spring
+## referncia https://spring.io/guides/gs/rest-service/
+## https://spring.io/guides/gs/spring-boot-docker/
